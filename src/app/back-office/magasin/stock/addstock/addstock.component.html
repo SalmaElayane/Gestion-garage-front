@@ -1,0 +1,98 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="background-image: url(https://mdbootstrap.com/img/new/textures/full/171.jpg);
+          height: 200px;
+          "></div>
+          
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="fw-bold mb-5"><strong>Ajouter Une Pièce <i class="fas fa-wrench"></i></strong></h1>
+            <form [formGroup]="stockFormGroup">
+              <div class="form-row">
+                <div class="col-md-6 mb-6">
+                    <label for="exampleInputreference" class="form-label">Référence </label>
+                    <input
+                      type="text"
+                      formControlName="reference"
+                      class="form-control"
+                      id="exampleInputreference"
+                      aria-describedby="referencemHelp"
+                      placeholder="Entre la référence du pièce"
+                    />
+                  </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputnom" class="form-label">Nom</label>
+                <input
+                  type="text"
+                  formControlName="nom"
+                  class="form-control"
+                  id="exampleInputnom"
+                  aria-describedby="nomHelp"
+                  placeholder="Entre le nom du pièce"
+                />    
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-4">
+                <label for="exampleInputfcategorie" class="form-label">Catégorie </label>
+                <select name="categorie" id="categorie-select"formControlName="categorie"type="text"
+                formControlName="categorie"
+                class="form-control"
+                id="exampleInputcategorie"
+                aria-describedby="categorieHelp">
+                <option value="">--choisir une Catégorie du pièce--</option>
+                <option value="Attelage ">Attelage</option>
+                <option value="Electricité">Electricité</option>
+                <option value="Piéces Moteur">Piéces Moteur</option>
+                <option value="Accessoires">Accessoires</option>
+                <option value="Echappement">Echappement</option>
+                <option value="Freinage ">Freinage</option>
+                <option value="Direstion-Suspension-Train">Direstion-Suspension-Train</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-4">
+                <label for="exampleInputprix " class="form-label">Prix </label>
+                (DH)<input
+                  type="text"
+                  formControlName="prix"
+                  class="form-control"
+                  id="exampleInputprix"
+                  aria-describedby="prixHelp"
+                  placeholder="Entre le prix du pièce"
+
+                />
+              </div>
+              <div class="col-md-4 mb-4">
+                <label for="exampleInputquantite" class="form-label">Quantité </label>
+                <input
+                  type="number"
+                  formControlName="quantite"
+                  class="form-control"
+                  min="1" max="500"
+                  id="exampleInputquantite"
+                  aria-describedby="quantiteHelp"
+                  placeholder="Entre la quantite du pièce"
+                />
+              </div>
+            </div><br>
+            <div class="col-md-12 mb-12">
+              <button type="button" class="btn btn-lg btn-primary "style="background-color: #1e2957;" (click)="ajouterStock()">AJOUTER</button>&nbsp;
+              <button type="button" class="btn btn-lg btn-danger " style="background-color: #a51623;"(click)="quitteStock()">ANNULER</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+

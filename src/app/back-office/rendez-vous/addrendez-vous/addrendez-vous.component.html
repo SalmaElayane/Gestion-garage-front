@@ -1,0 +1,137 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div
+      class="p-5 bg-image"
+      style="
+        background-image: url(https://mdbootstrap.com/img/new/textures/full/171.jpg);
+        height: 200px;
+      "
+    ></div>
+  
+    <!-- Background image -->
+  
+    <div
+      class="card mx-4 mx-md-5 shadow-5-strong"
+      style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+      "
+    >
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="fw-bold mb-5">
+              <strong>Prendre Un Rendez-Vous <i class="fas fa-calendar-alt"
+                ></i></strong>
+            </h1>
+            <form [formGroup]="RendezVousFormGroup">
+              <div class="form-row">
+                <div class="col-md-6 mb-6">
+                  <label for="exampleInputreference" class="form-label"
+                    >Référence
+                  </label>
+                  <input
+                    type="text"
+                    formControlName="reference"
+                    class="form-control"
+                    id="exampleInputreference"
+                    aria-describedby="referenceHelp"
+                    placeholder="Entre la référence"
+                  />
+                </div>
+                <div class="col-md-6 mb-6">
+                  <label for="exampleInputftype" class="form-label">Type </label>
+                  <select
+                    name="type"
+                    id="type-select"
+                    formControlName="type"
+                    type="text"
+                    formControlName="type"
+                    class="form-control"
+                    id="exampleInputtype"
+                    aria-describedby="typeHelp"
+                  >
+                    <option value="">--choisir un type de rendez-vous--</option>
+                    <option value="Contrôle technique">Contrôle technique</option>
+                    <option value="Visite complémentaire ">Visite complémentaire</option>
+                    <option value="Visite volontaire">Visite volontaire</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-6">
+                  <label for="exampleInputcinUtilisateur" class="form-label"
+                    >Cin Utilisateur
+                  </label>
+                  <select
+                    name="cinUtilisateur"
+                    id="cinUtilisateur-select"
+                    formControlName="cinUtilisateur"
+                    type="text"
+                    formControlName="cinUtilisateur"
+                    class="form-control"
+                    id="exampleInputcinUtilisateur"
+                    aria-describedby="cinUtilisateurHelp"
+                  ><option value="">--choisir cin d'utilistateur--</option>
+                    <option
+                      *ngFor="let cin of listCinCollab"
+                      value="{{ cin.cin }}"
+                    >
+                      {{ cin.cin }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-6">
+                    <label for="exampleInputdateRendezVous" class="form-label"
+                      >Date Rendez-Vous
+                    </label>
+                    <input
+                      type="date"
+                      formControlName="dateRendezVous"
+                      class="form-control"
+                      id="exampleInputdateRendezVous"
+                      aria-describedby="dateRendezVousHelp"
+                    />
+                  </div>
+              
+              <div class="col-md-12 mb-12">
+                <label for="exampleInputdescription" class="form-label"
+                  >Description
+                </label>
+                <input
+                  type="text"
+                  formControlName="description"
+                  class="form-control"
+                  id="exampleInputdescription"
+                  aria-describedby="referenceHelp"
+                  placeholder="Entre votre description pour ce rendez-vous"
+                />
+              </div>
+            </div>
+              <br />
+              <div class="col-md-12 mb-12">
+                <button
+                  type="button"
+                  class="btn btn-lg btn-primary"
+                  style="background-color: #1e2957"
+                  (click)="envoyerRendezVous()"
+                >
+                  Prendre</button
+                >&nbsp;
+                <button
+                  type="button"
+                  class="btn btn-lg btn-danger"
+                  style="background-color: #a51623"
+                  (click)="quitteRendezVous()"
+                >
+                  ANNULER
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  

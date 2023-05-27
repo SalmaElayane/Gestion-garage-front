@@ -1,0 +1,117 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#"
+        ><h3>
+            <i class="fab fa-weixin">
+            &nbsp;<span style="color: #d15d0f">Gestion</span
+            ><span style="color: #fff"> Des Notifications</span></i>
+        </h3></a
+      >
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#myNavbar"
+      >
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse justify-content-center" id="myNavbar">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link active" aria-current="page" href="#!">
+              <div>
+                <i class="fas fa-home fa-lg mb-1"></i>
+              </div>
+              Home
+            </a>
+          </li>
+        </ul>
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="addnotification">
+              <div>
+                <i class="fas fa-plus">&nbsp;<i class="far fa-comment-dots"></i></i>
+              </div>
+              Envoyer notification
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="menu">
+              <div>
+                <i class="fas fa-sign-in-alt"></i>
+              </div>
+              Quitter
+            </a>
+          </li>
+        </ul>
+        <!-- Right links -->
+       
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <br />
+  <div class="container">
+    <!-- Chercher form -->
+    <form [formGroup]="notificationsFormGroup" class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Chercher par référence..."
+        aria-label="Search"
+        formControlName="recherchereference"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+        (click)="chercherNotification()"
+      >
+        <i class="fas fa-search"></i> Chercher
+      </button>
+    </form>
+    <br>
+  <table class="table table-striped table-hover table-bordered text-center">
+    <thead>
+      <tr> 
+        <th scope="col">Référence</th>
+        <th scope="col">Date notification</th>
+        <th scope="col">Objet</th>
+        <th scope="col">Message</th>
+        <th scope="col ">Email utilisateur</th>
+        <th scope="col ">Modifier</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let item of data">
+        <td>{{ item.reference }}</td>
+        <td>{{ item.dateNotification }}</td>
+        <td>{{ item.objet }}</td>
+        <td>{{ item.message }}</td>
+        <td>{{ item.utilisateurDto.email }}</td>
+          <td >
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="updateNotification(item)"
+          >Modifier
+          <i class="far fa-edit"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table></div>
+  
+
+

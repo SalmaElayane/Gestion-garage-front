@@ -1,0 +1,103 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="background-image: url(https://mdbootstrap.com/img/new/textures/full/171.jpg);
+        height: 200px;
+        "></div>
+        
+  <!-- Background image -->
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="fw-bold mb-5"><strong>Envoyer Une Notification <i class="fas fa-comment-dots"></i></strong></h1>
+          <form [formGroup]="notificationFormGroup">
+            <div class="form-row">
+            <div class="col-md-6 mb-6">
+              <label for="exampleInputreference" class="form-label">Référence</label>
+              <input
+                type="text"
+                formControlName="reference"
+                class="form-control"
+                id="exampleInputreference"
+                aria-describedby="referenceHelp"
+                placeholder="Entre la référence "
+                disabled
+              />
+            </div>
+            <div class="col-md-6 mb-6">
+              <label for="exampleInputemailUtilisateur" class="form-label"
+              >Email Utilisateur
+            </label>
+                <select
+                  name="emailUtilisateur"
+                  id="emailUtilisateur-select"
+                  formControlName="emailUtilisateur"
+                  type="text"
+                  formControlName="emailUtilisateur"
+                  class="form-control"
+                  id="exampleInputemailUtilisateur"
+                  aria-describedby="emailUtilisateurHelp"
+                  disabled
+                >
+                  <option *ngFor="let email of listemailCollab" [value]="email.id">
+                    {{ email.email }}
+                  </option>
+              </select>
+                  </div>
+            <div class="col-md-6 mb-6">
+              <label for="exampleInputobjet" class="form-label">Objet</label>
+              <input
+                type="text"
+                formControlName="objet"
+                class="form-control"
+                id="exampleInputobjet"
+                aria-describedby="objetHelp"
+                placeholder="Entre l'objet de notification"
+              />
+            </div>
+          
+         
+            <div class="col-md-6 mb-6">
+              <label for="exampleInputdateNotification" class="form-label">Date Notification</label>
+              <input
+              type="date"
+                formControlName="dateNotification"
+                class="form-control"
+                id="exampleInputdateNotification"
+                aria-describedby="dateNotificationHelp"
+                placeholder="Entre la date notification"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12 mb-12">
+              <label for="exampleInputmessage" class="form-label">Message</label>
+              <input
+                type="text"
+                formControlName="message"
+                class="form-control"
+                id="exampleInputmessage"
+                aria-describedby="messageHelp"
+                placeholder="Ecrire le message a votre utilisateur"
+              />
+            </div>   
+          </div><br>
+          <div class="col-md-12 mb-12">
+            <button type="button" class="btn btn-lg btn-primary "style="background-color: #1e2957;" (click)="updateNotification()">MODIFIER </button>&nbsp;
+            <button type="button" class="btn btn-lg btn-danger " style="background-color: #a51623;"(click)="quitteNotification()">ANNULER </button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+
+

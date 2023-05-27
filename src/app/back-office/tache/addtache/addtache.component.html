@@ -1,0 +1,145 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="background-image: url(https://mdbootstrap.com/img/new/textures/full/171.jpg);
+          height: 200px;
+          "></div>
+          
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="fw-bold mb-5"><strong>Ajouter Une Tache <i class="fas fa-tasks"></i></strong></h1>
+            <form [formGroup]="tacheFormGroup">
+              <div class="form-row">
+                <div class="col-md-6 mb-6">
+                  <label for="exampleInputreference" class="form-label">Référence Tache</label>
+                  <input
+                    type="text"
+                    formControlName="reference"
+                    class="form-control"
+                    id="exampleInputreference"
+                    aria-describedby="referenceHelp"
+                    placeholder="Entre la reference tache"
+                  />
+                </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputnom" class="form-label">Nom Tache</label>
+                <input
+                  type="text"
+                  formControlName="nom"
+                  class="form-control"
+                  id="exampleInputnom"
+                  aria-describedby="nomHelp"
+                  placeholder="Entre le nom tache"
+                />
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputcinEmploye" class="form-label">Employé De Tache</label>
+                <select
+                  name="cinEmploye"
+                  id="cinEmploye-select"
+                  formControlName="cinEmploye"
+                  type="text"
+                  formControlName="cinEmploye"
+                  class="form-control"
+                  id="exampleInputcinEmploye"
+                  aria-describedby="cinEmployeHelp"
+                >
+                <option value="">--choisir l'employé du tache--</option>
+                  <option
+                    *ngFor="let cin of listCinCollab"
+                    value="{{ cin.cin }}"
+                  >
+                    {{ cin.cin }}
+                  </option>
+              </select>
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputservice" class="form-label">Services D’exploitation</label>
+                <select
+                  type="text"
+                  formControlName="service"
+                  class="form-control"
+                  id="exampleInputservice"
+                  aria-describedby="serviceHelp"
+                  placeholder="Entre le services exploitation"
+                >
+                <option value="">--Choisir un services exploitation--</option>
+                <option value="l'entretien courant de véhicule">l'entretien courant de véhicule</option>
+                <option value="les essais moteur">les essais moteur</option>
+                <option value="remplacement de pièces du moteur">remplacement de pièces du moteur</option>
+                <option value="remplacement organes du véhicule">remplacement organes du véhicule</option>
+                <option value="remise en état des circuits électriques">remise en état des circuits électriques</option>
+            </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputdate_debut" class="form-label">Date Début Tache</label>
+                <input
+                type="date"
+                  formControlName="date_debut"
+                  class="form-control"
+                  id="exampleInputdate_debut"
+                  aria-describedby="date_debutHelp"
+                  placeholder="Entre la date debut"
+                />
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputfdate_fin" class="form-label">Date Fin Tache</label>
+                <input
+                  type ="date" 
+                  name="date_fin" 
+                  formControlName="date_fin"
+                  class="form-control"
+                  id="exampleInputdate_fin"
+                  aria-describedby="date_finHelp"
+                  placeholder="Entre votre date fin"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-6">
+                    <label for="exampleInputfstatus" class="form-label">Statut Tache % </label>
+                    <input
+                      type ="number" 
+                      name="status" 
+                      min="0" max="100"
+                      formControlName="status"
+                      class="form-control"
+                      id="exampleInputstatus"
+                      aria-describedby="statusHelp"
+                      placeholder="Entre le Statut"
+                    />
+                  </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputdescription" class="form-label">Description Tache</label>
+                <input
+                  type="text"
+                  formControlName="description"
+                  class="form-control"
+                  id="exampleInputdescription"
+                  aria-describedby="descriptionHelp"
+                  placeholder="Entre une description"
+                />
+              </div>   
+            </div><br>
+            <div class="col-md-12 mb-12">
+              <button type="button" class="btn btn-lg btn-primary "style="background-color: #1e2957;" (click)="ajouterTache()">AJOUTER</button>&nbsp;
+              <button type="button" class="btn btn-lg btn-danger " style="background-color: #a51623;"(click)="quitteTache()">ANNULER</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+

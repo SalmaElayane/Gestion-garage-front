@@ -1,0 +1,137 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="background-image: url(https://mdbootstrap.com/img/new/textures/full/171.jpg);
+          height: 200px;
+          "></div>
+          
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="fw-bold mb-5"><strong><u><i class="fas fa-user-plus"> Ajouter Un Employé</i></u></strong></h1>
+            <form [formGroup]="employeFormGroup">
+              <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="exampleInputnom" class="form-label">Nom</label>
+                <input
+                  type="text"
+                  formControlName="nom"
+                  class="form-control"
+                  id="exampleInputnom"
+                  aria-describedby="nomHelp"
+                  placeholder="Entre votre nom "
+                />
+                
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="exampleInputprénom" class="form-label">Prénom </label>
+                <input
+                  type="text"
+                  formControlName="prenom"
+                  class="form-control"
+                  id="exampleInputprenom"
+                  aria-describedby="prenomHelp"
+                  placeholder="Entre votre prénom"
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="exampleInputcin" class="form-label">Cin</label>
+                <input
+                  type="text"
+                  formControlName="cin"
+                  class="form-control"
+                  id="exampleInputcin"
+                  aria-describedby="cinHelp"
+                  placeholder="Entre votre cin" 
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-4">
+                <label for="exampleInputage" class="form-label">Age</label>
+                <input
+                type="number"
+                  formControlName="age"
+                  min="18" max="65"
+                  class="form-control"
+                  id="exampleInputage"
+                  aria-describedby="ageHelp"
+                  placeholder="Entre votre age"
+                />
+              </div>
+              <div class="col-md-4 mb-4">
+                <label for="exampleInputftele" class="form-label">Télé</label>
+                <input
+                  type ="tel" 
+                  name="tel" 
+                  pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" 
+                  size="10"
+                  formControlName="tele"
+                  class="form-control"
+                  id="exampleInputtele"
+                  aria-describedby="teleHelp"
+                  placeholder="Entre votre tele"
+                  required
+                />
+                <small style="color:red">Format: 06-1456-7890</small>
+              </div>
+              <div class="col-md-4 mb-4">
+                <label for="exampleInputfrole" class="form-label">Rôle</label>
+                <select name="role" id="role-select"formControlName="role"type="text"
+                formControlName="role"
+                class="form-control"
+                id="exampleInputrole"
+                aria-describedby="roleHelp">
+                <option value="">--choisir un rôle d'employe--</option>
+                <option value="Technicien Pneumatique">Technicien Pneumatique</option>
+                <option value="Technicien Vidange">Technicien Vidange</option>
+                <option value="Technicien Mécanique">Technicien Mécanique </option>
+                <option value="Technicien Electrique">Technicien Electrique </option>
+                <option value="Technicien Réparation">Technicien Réparation</option>
+                <option value="Technicien Diagnostic ">Technicien Diagnostic </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputlogin" class="form-label">Login</label>
+                <input
+                  type="text"
+                  formControlName="login"
+                  class="form-control"
+                  id="exampleInputlogin"
+                  aria-describedby="loginHelp"
+                  placeholder="Entre votre login"
+                />
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputmotDePasse" class="form-label">Mot de passe</label>
+                <input
+                  type="password"
+                  formControlName="mot_de_passe"
+                  class="form-control"
+                  id="exampleInputmotDePasse"
+                  aria-describedby="motDePasseHelp"
+                  placeholder="Entre votre mot de passe"
+                />
+              </div>
+              
+            </div><br>
+            <div class="col-md-12 mb-12">
+              <button type="button" class="btn btn-lg btn-primary "style="background-color: #1e2957;" (click)="ajouterEmploye()">AJOUTER</button>&nbsp;
+              <button type="button" class="btn btn-lg btn-danger " style="background-color: #a51623;"(click)="quitteEmploye()">ANNULER</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->

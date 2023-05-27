@@ -1,0 +1,180 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div
+    class="p-5 bg-image"
+    style="
+      background-image: url(https://mdbootstrap.com/img/new/textures/full/171.jpg);
+      height: 200px;
+    "
+  ></div>
+
+  <!-- Background image -->
+
+  <div
+    class="card mx-4 mx-md-5 shadow-5-strong"
+    style="
+      margin-top: -100px;
+      background: hsla(0, 0%, 100%, 0.8);
+      backdrop-filter: blur(30px);
+    "
+  >
+    <div class="card-body py-5 px-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="fw-bold mb-5">
+            <strong>Modifier Maintenance <i class="fas fa-cogs"></i></strong>
+          </h1>
+          <form [formGroup]="MaintenenceFormGroup">
+            <div class="form-row">
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputreference" class="form-label"
+                  >Référence
+                </label>
+                <input
+                  type="text"
+                  formControlName="reference"
+                  class="form-control"
+                  id="exampleInputreference"
+                  aria-describedby="referenceHelp"
+                  placeholder="Entre la reference"
+                />
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputmatriculeVoiture" class="form-label"
+                  >Matricule Voiture
+                </label>
+                <select
+                  name="matriculeVoiture"
+                  id="matriculeVoiture-select"
+                  formControlName="matriculeVoiture"
+                  type="text"
+                  formControlName="matriculeVoiture"
+                  class="form-control"
+                  id="exampleInputmatriculeVoiture"
+                  aria-describedby="matriculeVoitureHelp"
+                >
+                  <option value="">--choisir matricule Voiture--</option>
+                  <option
+                    *ngFor="let matricule of listMatriculeCollab"
+                    [value]="matricule.matricule"
+                  >
+                    {{ matricule.matricule }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputetat" class="form-label"
+                  >Etat Véhicule
+                </label>
+                <select
+                  type="text"
+                  formControlName="etat"
+                  class="form-control form-control"
+                  id="exampleInputetat"
+                  aria-describedby="etatHelp"
+                  placeholder="Entre l'état vehicule"
+                  name="etat"
+                >
+                  <option value="">--choisir Etat de véhicule--</option>
+                  <option value="changement de pièces">
+                    changement de pièces
+                  </option>
+                  <option value="Berline ">visite technique</option>
+                  <option value="accidenté">accidenté</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputsuivi" class="form-label"
+                  >Suivi véhicule
+                </label>
+                <select
+                  type="text"
+                  formControlName="suivi"
+                  class="form-control form-control"
+                  id="exampleInputsuivi"
+                  aria-describedby="suiviHelp"
+                  placeholder="Entre le suivi"
+                  name="suivi"
+                >
+                  <option value="">--choisir suivi du véhicule--</option>
+                  <option value="En cours De Maintenence">
+                    En cours De Maintenence
+                  </option>
+                  <option value="En cours De Nettoyage  ">
+                    En cours De Nettoyage
+                  </option>
+                  <option value="En cours De vidange">
+                    En cours De vidange
+                  </option>
+                  <option value="Véhicule  Prêt">Véhicule Prêt</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputdateDebut" class="form-label"
+                  >Date Début Maintenance</label
+                >
+                <input
+                  type="date"
+                  formControlName="dateDebut"
+                  class="form-control"
+                  id="exampleInputdateDebut"
+                  aria-describedby="dateDebutHelp"
+                  placeholder="Entre date debut maintenance"
+                />
+              </div>
+              <div class="col-md-6 mb-6">
+                <label for="exampleInputdateFin" class="form-label"
+                  >Date Fin Maintenance</label
+                >
+                <input
+                  type="date"
+                  formControlName="dateFin"
+                  class="form-control"
+                  id="exampleInputdateFin"
+                  aria-describedby="dateFinHelp"
+                  placeholder="Entre date fin maintenance"
+                />
+              </div>
+              <div class="col-md-12 mb-12">
+                <label for="exampleInputdescription" class="form-label"
+                  >Description Total
+                </label>
+                <input
+                  name="description"
+                  id="description-select"
+                  formControlName="description"
+                  type="text"
+                  formControlName="description"
+                  class="form-control"
+                  id="exampleInputdescription"
+                  aria-describedby="descriptionHelp"
+                />
+              </div>
+            </div>
+            <br />
+            <div class="col-md-12 mb-12">
+              <button
+                type="button"
+                class="btn btn-lg btn-primary"
+                style="background-color: #1e2957"
+                (click)="updateMaintenence()"
+              >
+                MODIFIER</button
+              >&nbsp;
+              <button
+                type="button"
+                class="btn btn-lg btn-danger"
+                style="background-color: #a51623"
+                (click)="quitteMaintenence()"
+              >
+                ANNULER
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
